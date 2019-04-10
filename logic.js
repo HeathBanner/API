@@ -217,7 +217,7 @@ $(document).ready($(document).on("click", "#clearBtn", function(){
 
 function grabGif() {
     $.ajax({
-        url: "http://api.giphy.com/v1/gifs/search?q="+ newGif + "&api_key=sqkFRkHXvw3ho2qUPYvEA7jx7TUSsUnv&limit=10",
+        url: "https://api.giphy.com/v1/gifs/search?q="+ newGif + "&api_key=sqkFRkHXvw3ho2qUPYvEA7jx7TUSsUnv&limit=10",
         method: "GET",
     }).then(function(response) {
         console.log(newGif)
