@@ -1,0 +1,176 @@
+
+.header {
+    margin: 20px 10px;
+}
+
+.headerRow {
+    background: lightcoral;
+}
+
+#submit {
+    width: 70px;
+    margin-top: 10px;
+}
+
+#giphy {
+    margin: 0px 80px 0px 80px;
+    background: lemonchiffon;
+    border: none;
+    font-weight: bold;
+}
+
+#clearBtn {
+    width: 100px;
+    margin: 10px 35px;
+    background: crimson;
+    border: none;
+    font-weight: bold;
+}
+
+#userFav {
+    width: 100px;
+    margin: 10px 35px;
+    background: yellowgreen;
+    border: none;
+    font-weight: bold;
+}
+
+img {
+    height: 150px;
+    width: 200px;
+}
+
+.btnFrame {
+    padding: 20px 0px;
+    background: lightblue;
+}
+
+.btns {
+    display: block;
+    margin: 10px 35px;
+    width: 100px;
+    background: #666;
+    border: none;
+    font-weight: bold;
+}
+
+.contentFrame {
+    margin: 20px, 0px;
+    background: lightgray;
+}
+
+.gifDiv {
+    display: inline-block;
+    margin: 10px 50px;
+    width: 200px;
+}
+
+.gifContent {
+    text-align: center;
+}
+
+
+.gifContent h3 {
+    width: 100%;
+}
+
+.source {
+    display: inline-block;
+}
+
+.view {
+    display: inline-block;
+    margin: 10px;
+    text-align: right
+}
+
+
+/* OMDB Movies!!! */
+
+#omdb {
+    margin: 0px 0px 0px 80px;
+    background: lemonchiffon;
+    border: none;
+    font-weight: bold;
+}
+
+#movieDiv {
+    text-align: center;
+}
+
+#movieTitle {
+    margin-bottom: 20px;
+}
+
+#movieImg {
+    margin-bottom: 20px;
+}
+
+#movieRating {
+    background: red;
+    width: 250px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Weather API!!! */
+
+#weatherTarget {
+    float: right;
+    margin-right: 30px;
+}
+
+#weatherD {
+    font-weight: bold;
+}
+
+#weatherPng {
+    height: 50px;
+    width: 50px;
+}
+
+@media (max-width: 991.98px) {
+    .btns {
+        display: inline;
+        margin: 10px;
+    }
+    
+    #clearBtn {
+        margin: 10px;
+    }
+    
+    #userFav {
+        margin: 10px;
+    }
+    
+}
+
+@media (max-width: 629px) {
+    .gifDiv {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }    
+    .view {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #weatherTarget {
+        float: right;
+        margin-right: 0px;
+    }
+    #omdb {
+        margin: 0px 0px 0px 10px;
+        background: lemonchiffon;
+        border: none;
+        font-weight: bold;
+    }
+    #giphy {
+        margin: 0px 0px 0px 10px;
+        background: lemonchiffon;
+        border: none;
+        font-weight: bold;
+    }    
+}
