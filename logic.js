@@ -371,7 +371,7 @@ function weatherDisplay() {
         var weather = $('<span id="weatherD">' + description + '</span>')
         $("#weatherTarget").append(weather)
 
-        var icon = $('<img src="http://openweathermap.org/img/w/' + png + '.png" id="weatherPng">')
+        var icon = $('<img src="https://openweathermap.org/img/w/' + png + '.png" id="weatherPng">')
         $("#weatherTarget").append(icon)
 
         weatherMood()
