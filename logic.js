@@ -278,12 +278,12 @@ function grabMovie() {
 }
 
 function weatherMood() {
-    var clouds = ['few clouds', 'scattered clouds', 'broken clouds']
-    var rain = ['shower rain', 'rain']
+    var atmosphere = ['Mist', 'Smoke', 'Haze', 'Dust', 'Fog', 'Sand', 'Dust', 'Ash', 'Squall', 'Tornado']
+    var rain = ['shower rain', 'light rain', 'rain', 'moderate rain', 'heavy intensity rain', 'very heavy rain', 'extreme rain', 'freezing rain']
 
     console.log(description)
 
-    if (clouds.indexOf(description) > -1) {
+    if (main === 'Clouds') {
         $(".headerRow").css({
             background: '#b7b7b7',
         })
@@ -295,7 +295,7 @@ function weatherMood() {
         $(".contentFrame").css({
             background: '#5b5b5b',
         })
-    }else if (rain.indexOf(description) > -1) {
+    }else if (main === 'Rain') {
         $(".headerRow").css({
             background: '#4e4e4f',
         })
@@ -307,7 +307,7 @@ function weatherMood() {
         $(".contentFrame").css({
             background: '#949496',
         })
-    }else if (description === 'clear sky') {
+    }else if (main === 'Clear') {
         $(".headerRow").css({
             background: '#f4d330',
         })
@@ -319,7 +319,7 @@ function weatherMood() {
         $(".contentFrame").css({
             background: '#87dfff',
         })
-    }else if (description === 'thunderstorm') {
+    }else if (main === 'Thunderstorm') {
         $(".headerRow").css({
             background: '#494949',
         })
@@ -331,7 +331,7 @@ function weatherMood() {
         $(".contentFrame").css({
             background: '#afafac',
         })
-    }else if (description === 'snow') {
+    }else if (main === 'Snow') {
         $(".headerRow").css({
             background: '#70706f',
         })
@@ -343,7 +343,7 @@ function weatherMood() {
         $(".contentFrame").css({
             background: '#ffffff',
         })
-    }else if (description.indexOf('mist') > -1 ) {
+    }else if (atmosphere.indexOf(main) > -1) {
         $(".headerRow").css({
             background: '#a5a4a4',
         })
@@ -364,6 +364,7 @@ function weatherDisplay() {
         method: "GET",
     }).then(function(response){
         description = response.weather[0].description
+        main = response.weather[0].main
         png = response.weather[0].icon
 
         console.log(description)
