@@ -154,6 +154,19 @@ img {
     .view {
         margin-bottom: 40px;
     }
+    #omdb {
+        margin: 0px 0px 0px 10px;
+        background: lemonchiffon;
+        border: none;
+        font-weight: bold;
+    }
+    #giphy {
+        margin: 0px 0px 0px 10px;
+        background: lemonchiffon;
+        border: none;
+        font-weight: bold;
+    }    
+
 }
 
 @media (max-width: 575.98px) {
@@ -172,5 +185,9 @@ img {
         background: lemonchiffon;
         border: none;
         font-weight: bold;
-    }    
+    } 
+    .header  {
+        padding: 0px 5px;
+        margin: 0px
+    }
 }
