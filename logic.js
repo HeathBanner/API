@@ -360,7 +360,7 @@ function weatherMood() {
 
 function weatherDisplay() {
     $.ajax({
-        url: 'http://api.openweathermap.org/data/2.5/weather?id=4460243&APPID=4216d1350fe31af9bf5100bb34fa72e2',
+        url: 'https://api.openweathermap.org/data/2.5/weather?id=4460243&APPID=4216d1350fe31af9bf5100bb34fa72e2',
         method: "GET",
     }).then(function(response){
         description = response.weather[0].description
