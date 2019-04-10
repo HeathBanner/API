@@ -279,7 +279,7 @@ function grabMovie() {
 
 function weatherMood() {
     var atmosphere = ['Mist', 'Smoke', 'Haze', 'Dust', 'Fog', 'Sand', 'Dust', 'Ash', 'Squall', 'Tornado']
-    var rain = ['shower rain', 'light rain', 'rain', 'moderate rain', 'heavy intensity rain', 'very heavy rain', 'extreme rain', 'freezing rain']
+    var rain = ['Rain', 'Drizzle']
 
     console.log(description)
 
@@ -295,7 +295,7 @@ function weatherMood() {
         $(".contentFrame").css({
             background: '#5b5b5b',
         })
-    }else if (main === 'Rain') {
+    }else if (rain.indexOf(main) > -1) {
         $(".headerRow").css({
             background: '#4e4e4f',
         })
