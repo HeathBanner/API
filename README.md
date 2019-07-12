@@ -1,5 +1,7 @@
 # API
 
+[Click to visit](https://heathbanner.github.io/API/)
+
 The website allows the user to press a button and list 10 button relevant to the button they pressed. 
 
 They're given the option to add the gif to a favorites lists.

@@ -27,7 +27,6 @@ $(document).ready($(document).on("click", "#omdb", function(){
     var movieReplace = $('<button id="giphy">Giphy</button>')
     $("#omdb").replaceWith(movieReplace)
 
-
     movieFlag = true
 
     var newBtns = ["interstellar", 'frozen', 'tropic thunder', 'the conjuring']
@@ -61,11 +60,9 @@ $(document).ready($(document).on("click", "#giphy", function(){
     }
 }));
 
-
 $(document).ready($(document).on("click", "#submit", function(){
-        console.log("check")
         value = $("input").val()
-        console.log(value)
+        $('input').val('');
         var btnUpdate = $("<button class='btns' value='" + value + "'>" + value + "</button>")
         $("#btnTarget").append(btnUpdate)
 }));
@@ -74,7 +71,6 @@ $(document).ready($(document).on("click", "img", function(){
     var index = this.id
     var img = this;
     var data = img.dataset;
-    console.log(gifFlag)
     var dName = data.name
 
     var still = []
@@ -86,9 +82,6 @@ $(document).ready($(document).on("click", "img", function(){
             if (index == userFav[i].id) {
                 still.push(userFav[i].images.original_still.url)
                 animated.push(userFav[i].images.original.url)
-                console.log("Check!")
-            }else {
-                console.log("Nope!")
             }
         }
         if (this.classList.contains("still")) {
@@ -103,9 +96,6 @@ $(document).ready($(document).on("click", "img", function(){
             if (index == gifObject[dName][i].id) {
                 still.push(gifObject[dName][i].images.original_still.url)
                 animated.push(gifObject[dName][i].images.original.url)
-                console.log("Check!")
-            }else {
-                console.log("Nope!")
             }
         }
         if (this.classList.contains("still")) {
@@ -121,7 +111,6 @@ $(document).ready($(document).on("click", ".favorite", function(){
     var img = this;
     var data = img.dataset;
     var dName = data.name
-    console.log(data.name)
     
     count++
 
@@ -133,14 +122,10 @@ $(document).ready($(document).on("click", ".favorite", function(){
                 
                 userFav.push(gifObject[dName][i])
                 
-                console.log(userFav)
                 userFav[dName] = dName
-                console.log("Check!")
-            }
-        }else{
-                console.log("Nope!")
             }
         }
+    }
 }));
     
 $(document).ready($(document).on("click", "#userFav", function(){
@@ -186,7 +171,7 @@ $(document).ready($(document).on("click", "#userFav", function(){
 $(document).ready($(document).on("click", ".btns", function(){
     movie = $(this).val()
 
-    if(movieFlag){
+    if(movieFlag) {
         $(".remove").remove()
         movie = movie.split(' ').join('+')
         grabMovie()
@@ -198,12 +183,10 @@ $(document).ready($(document).on("click", ".btns", function(){
             favFlag = true
         }
         newGif = $(this).val()
-        if (gifFlag[newGif])  {
-            console.log("nope")
+        if (gifFlag[newGif]) {
             return
         } else if (favFlag){
             grabGif()
-            console.log("yep")
         }
     }
 }));
@@ -220,21 +203,20 @@ function grabGif() {
         url: "https://api.giphy.com/v1/gifs/search?q="+ newGif + "&api_key=sqkFRkHXvw3ho2qUPYvEA7jx7TUSsUnv&limit=10",
         method: "GET",
     }).then(function(response) {
-        console.log(newGif)
         gifObject[newGif] = response.data
         gifFlag[newGif] = response.data
         for (var i = 0; i < 10; i++) {
-            var gifDiv = $('<div class="gifDiv clear">')
+            var gifDiv = $('<div class="gifDiv clear">');
 
-            var title = $('<h3 class="clear gifContent">' + response.data[i].title.toUpperCase() + '</h3>')
+            var title = $('<h6 class="clear gifContent">' + response.data[i].title.toUpperCase() + '</h6>')
             gifDiv.append(title)
-
-            var still = $('<img src="' + response.data[i].images.original_still.url + '" class="still gifContent clear" id="' + response.data[i].id + '" data-name="' + newGif + '">')
-            gifDiv.append(still)
+            
+            var still = $('<img src="' + response.data[i].images.original_still.url + '" class="still gifContent clear" id="' + response.data[i].id + '" data-name="' + newGif + '">');
+            gifDiv.append(still);
+            
+            var overlay = $('<div class="gifOverlay">');
+            gifDiv.append(overlay)
                                     
-            var rating = $('<p class="clear gifContent">Rating: ' + response.data[i].rating.toUpperCase() + '</p>')
-            gifDiv.append(rating)
-
             var source = $('<a href="' + response.data[i].source + '" class="clear gifContent source" target="_blank">Source</h3>')
             gifDiv.append(source)
 
@@ -262,26 +244,25 @@ function grabMovie() {
         var poster = $('<img src="' + response.Poster + '" id="movieImg" class="remove">')
         newDiv.append(poster)
 
-        var release = $('<h4 id="movieRelease" class="remove">Released: ' + response.Released + '</h4>')
+        var release = $('<h6 id="movieRelease" class="remove">Released: ' + response.Released + '</h6>')
         newDiv.append(release)
 
         var rating = $('<h4 id="movieRating" class="remove">' + response.Ratings[1].Source + ": " + response.Ratings[1].Value + '</h4>')
         newDiv.append(rating)
 
-        var plot = $('<p id="moviePlot" class="remove">Plot: ' + response.Plot + '</p>')
-        newDiv.append(plot)
+        var plotDiv = $(`<div id="plotDiv">`);
+        var plotBody = $(`<h5 id="plotTitle" class="remove moviePlot">Plot</h5><p class="remove moviePlot">${response.Plot}</p>`);
+        plotDiv.append(plotBody);
+
+        newDiv.append(plotDiv);
 
         $("#gifTarget").append(newDiv)
-
-
     })
 }
 
 function weatherMood() {
     var atmosphere = ['Mist', 'Smoke', 'Haze', 'Dust', 'Fog', 'Sand', 'Dust', 'Ash', 'Squall', 'Tornado']
     var rain = ['Rain', 'Drizzle']
-
-    console.log(description)
 
     if (main === 'Clouds') {
         $(".headerRow").css({
@@ -367,9 +348,7 @@ function weatherDisplay() {
         main = response.weather[0].main
         png = response.weather[0].icon
 
-        console.log(description)
-
-        var weather = $('<span id="weatherD">' + description + '</span>')
+        var weather = $('<h6 id="weatherD">' + description + '</h6>')
         $("#weatherTarget").append(weather)
 
         var icon = $('<img src="https://openweathermap.org/img/w/' + png + '.png" id="weatherPng">')

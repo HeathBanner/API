@@ -1,38 +1,126 @@
 
-.header {
-    margin: 20px 10px;
+body {
+    font-family: 'Roboto', sans-serif;
 }
+
+.bootstrapFix {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.containerDiv {
+    height: 100vh;
+    overflow: scroll;
+}
+
+.header {
+    /* padding: 20px 0px; */
+    height: 75px;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)};
 
 .headerRow {
     background: lightcoral;
 }
 
+#transitionBtns {
+    position: absolute;
+    top: -8.5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchContainer {
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gifSearch {
+    padding: 5px 0px;
+    border: none;
+    border-radius: 4px;
+}
+
 #submit {
     width: 70px;
-    margin-top: 10px;
+    padding: 5px 0px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background: linear-gradient(45deg, #ffb01e 30%, #e79703 90%);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
+#submit:hover {
+    background: linear-gradient(45deg, #e29d1c 30%, #c07e04 90%);
 }
 
 #giphy {
+    padding: 7px 15px;
     margin: 0px 80px 0px 80px;
-    background: lemonchiffon;
+    color: white;
+    background: linear-gradient(45deg, #6649e6 30%, #5034cf 90%);
     border: none;
+    border-radius: 4px;
     font-weight: bold;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
+#giphy:hover {
+    background: linear-gradient(45deg, #785bf7 30%, #6341fc 90%);
+}
+
+#btnTarget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#btnTarget button {
+    border-radius: 4px;  
+    color: white;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
+    cursor: pointer;
 }
 
 #clearBtn {
-    width: 100px;
-    margin: 10px 35px;
-    background: crimson;
+    width: 100%;
+    padding: 7px 0px;
+    margin: 10px 5px;
+    background: linear-gradient(45deg, #f03e40 30%, #d12628 90%);
+    border: none;
+    font-weight: bold;
+    transition: .5s ease;
+}
+
+#clearBtn:hover {
+    background: linear-gradient(45deg, #d3373a 30%, #a71417 90%);
+}
+
+#userFav {
+    width: 100%;
+    padding: 7px 0px;
+    margin: 10px 5px;
+    background: linear-gradient(45deg, #ffb01e 30%, #e79703 90%);
     border: none;
     font-weight: bold;
 }
 
-#userFav {
-    width: 100px;
-    margin: 10px 35px;
-    background: yellowgreen;
-    border: none;
-    font-weight: bold;
+#userFav:hover {
+    background: linear-gradient(45deg, #e29d1c 30%, #c07e04 90%);
 }
 
 img {
@@ -43,81 +131,41 @@ img {
 .btnFrame {
     padding: 20px 0px;
     background: lightblue;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
 }
 
 .btns {
     display: block;
-    margin: 10px 35px;
-    width: 100px;
-    background: #666;
-    border: none;
-    font-weight: bold;
-}
-
-.contentFrame {
-    margin: 20px, 0px;
-    background: lightgray;
-}
-
-.gifDiv {
-    display: inline-block;
-    margin: 10px 50px;
-    width: 200px;
-}
-
-.gifContent {
-    text-align: center;
-}
-
-
-.gifContent h3 {
+    padding: 7px 0px;
+    margin: 10px 5px;
     width: 100%;
-}
-
-.source {
-    display: inline-block;
-}
-
-.view {
-    display: inline-block;
-    margin: 10px;
-    text-align: right
-}
-
-
-/* OMDB Movies!!! */
-
-#omdb {
-    margin: 0px 0px 0px 80px;
-    background: lemonchiffon;
+    background: linear-gradient(45deg, #6649e6 30%, #5034cf 90%);
     border: none;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
-#movieDiv {
-    text-align: center;
-}
-
-#movieTitle {
-    margin-bottom: 20px;
-}
-
-#movieImg {
-    margin-bottom: 20px;
-}
-
-#movieRating {
-    background: red;
-    width: 250px;
-    text-align: center;
-    margin: 0 auto;
+.btns:hover {
+    background: linear-gradient(45deg, #785bf7 30%, #6341fc 90%);
 }
 
 /* Weather API!!! */
 
 #weatherTarget {
-    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
     margin-right: 30px;
+}
+
+#weatherTarget h6 {
+    margin: 10px 0px 0px 0px;
+    text-transform: capitalize;
+}
+
+#weatherTarget img {
+    margin: 0 auto;
 }
 
 #weatherD {
@@ -129,7 +177,13 @@ img {
     width: 50px;
 }
 
-@media (max-width: 991.98px) {
+@media only screen and (max-width: 768px) {
+
+    #transitionBtns {
+        top: -12.5%;
+        left: 9%;
+    }
+
     .btns {
         display: inline;
         margin: 10px;
@@ -142,52 +196,52 @@ img {
     #userFav {
         margin: 10px;
     }
-    
 }
 
-@media (max-width: 629px) {
-    .gifDiv {
-        display: block;
-        margin: 0 auto;
-        width: 200px;
-    }    
-    .view {
-        margin-bottom: 40px;
-    }
-    #omdb {
-        margin: 0px 0px 0px 10px;
-        background: lemonchiffon;
-        border: none;
-        font-weight: bold;
-    }
-    #giphy {
-        margin: 0px 0px 0px 10px;
-        background: lemonchiffon;
-        border: none;
-        font-weight: bold;
-    }    
+@media only screen and (max-width: 630px) {
 
-}
-
-@media (max-width: 575.98px) {
     #weatherTarget {
-        float: right;
-        margin-right: 0px;
+        display: none;
     }
-    #omdb {
-        margin: 0px 0px 0px 10px;
-        background: lemonchiffon;
-        border: none;
-        font-weight: bold;
+
+    #submit {
+        padding: 5px 10px;
     }
-    #giphy {
-        margin: 0px 0px 0px 10px;
-        background: lemonchiffon;
-        border: none;
-        font-weight: bold;
-    } 
-    .header  {
-        padding: 0px 5px;
-        margin: 0px
+
+    #searchContainer {
+        top: 50%;
+        right: 0%;
+        transform: translate(0%, -50%);
+        margin-left: 10px;    
+    }
+}
+
+@media only screen and (max-width: 540px) {
+
+    #transitionBtns {
+        top: -12.5%;
+        left: 11%;
+    }
+
+    #searchContainer {
+        top: 50%;
+        right: 10%;
+        transform: translate(0%, -50%);
+        margin-left: 10px;    
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    #transitionBtns {
+        top: -12.5%;
+        left: 15%;
+    }
+
+    #searchContainer {
+        top: 50%;
+        right: 25%;
+        transform: translate(0%, -50%);
+        margin-left: 10px;    
     }
 }

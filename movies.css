@@ -1,0 +1,68 @@
+/* OMDB Movies!!! */
+
+#omdb {
+    padding: 7px 25px;
+    color: white;
+    background: linear-gradient(45deg, #6649e6 30%, #5034cf 90%);
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
+#omdb:hover {
+    background: linear-gradient(45deg, #785bf7 30%, #6341fc 90%);
+}
+
+#movieDiv {
+    width: 60%;
+    margin: 40px 0px;
+    background: linear-gradient(45deg, #919090 30%, #666565 90%);
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+#movieTitle {
+    color: #4d4d4d;
+    border-radius: 4px 4px 0px 0px;
+    background: linear-gradient(45deg, #fff 30%, #e6e6e6 90%);
+    margin-bottom: 10px;
+    padding: 10px 0px;
+}
+
+#movieImg {
+    width: auto;
+    height: 350px;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
+}
+
+#movieRelease {
+    margin: 10px 0px;
+    color: white;
+}
+
+#movieRating {
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    background: linear-gradient(45deg, #e40127 30%, #c00524 90%);
+    width: 280px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#plotDiv {
+    width: 80%;
+    margin: 20px auto 20px auto;
+    padding: 20px 25px;
+    border-radius: 4px;
+    color: black;
+    background: linear-gradient(45deg, #fff 30%, #e6e6e6 90%);
+}
+
+#plotTitle {
+    margin: 0px 50px 10px 50px;
+    border-bottom: solid 1px #999999;
+}
